@@ -15,16 +15,16 @@ contract OnDemandSalary {
     uint256 public constant SALARY_PER_SECOND = 100; 
 
     // Events
-    event SalaryStreamStarted(address indexed employee, uint256 cycleStart); // Emitted when salary stream is started [previous conversation].
-    event SalaryCashedOut(address indexed employee, uint256 amount); // Emitted when employee withdraws salary [previous conversation].
-    event StreamingStopped(address indexed employee); // Emitted when manager stops salary stream [previous conversation].
+    event SalaryStreamStarted(address indexed employee, uint256 cycleStart); 
+    event SalaryCashedOut(address indexed employee, uint256 amount); 
+    event StreamingStopped(address indexed employee); 
 
 
     // Custom Errors
-    error NotManager(); // Reverts when non-manager tries to access a manager-only function [previous conversation].
-    error StreamingNotActive();  // Reverts when an employee tries to cash out when the stream is not active [previous conversation].
-    error InsufficientBalance(uint256 available, uint256 requested); // Reverts when employee tries to withdraw more than available [previous conversation].
-
+    error NotManager(); 
+    error StreamingNotActive(); 
+    error InsufficientBalance(uint256 available, uint256 requested);
+    
 
     /// @notice Constructor to set the manager address on contract deployment
     constructor() {
